@@ -2,7 +2,8 @@ import pickle
 import numpy as np
 import streamlit as st
 
-loaded_model = pickle.load(open('final_gb_regressor.pkl', 'rb'))
+with open('final_gb_regressor.pkl', 'rb') as file:
+    model = pickle.load(file)
 
 # Title of the app
 st.title("Health Insurance Cost Estimation")
@@ -35,5 +36,5 @@ if st.button("Estimate"):
         input_data_reshaped = input_data_as_numpy_array.reshape(1, -1)
 
         # Make prediction
-        cost_prediction = loaded_model.predict(input_data_reshaped)
+        cost_prediction = model.predict(input_data_reshaped)
         st.success(f"The predicted insurance cost is {np.round(cost_prediction[0], 2)} USD")
