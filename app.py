@@ -10,8 +10,12 @@ st.title("Health Insurance Cost Estimation")
 # Input fields with no default values
 age = st.number_input("Enter age:", min_value=18, max_value=120, value=None)
 sex = st.selectbox("Select sex:", options=["Select", "Male", "Female"])
-weight = st.number_input("Enter weight (kg):", min_value=30.0, value=None)
-height_cm = st.number_input("Enter height (cm):", min_value=50.0, value=None)
+# Create two columns for height and weight
+col1, col2 = st.columns(2)
+with col2:
+    height_cm = st.number_input("Enter height (cm):", min_value=50.0, value=None)
+with col1:
+    weight = st.number_input("Enter weight (kg):", min_value=30.0, value=None)
 children = st.number_input("Enter number of children:", min_value=0, value=None)
 smoker = st.selectbox("Are you a smoker?", options=["Select", "Yes", "No"])
 region = st.selectbox("Select region:", options=["Select", "Southeast", "Southwest", "Northeast", "Northwest"])
