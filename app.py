@@ -40,4 +40,4 @@ if st.button("Estimate"):
 
         # Make prediction
         cost_prediction = loaded_model.predict(input_data_reshaped)
-        st.success(f"The predicted insurance cost is {np.round(cost_prediction[0], 2)} USD")
+        st.success(f"Your estimated annual insurance cost is {np.round(cost_prediction[0], 2)} USD")
