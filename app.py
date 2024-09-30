@@ -2,7 +2,7 @@ import pickle
 import numpy as np
 import streamlit as st
 
-loaded_model = pickle.load(open('C:/Deploy/Insurance/final_gb_regressor.pkl', 'rb'))
+loaded_model = pickle.load(open('final_gb_regressor.pkl', 'rb'))
 
 # Title of the app
 st.title("Health Insurance Cost Estimation")
